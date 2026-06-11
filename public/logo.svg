@@ -1,0 +1,17 @@
+<svg width="640" height="160" viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield Icon -->
+  <path d="M40 20 L80 20 L80 60 C80 85 60 100 40 110 C20 100 0 85 0 60 L0 20 Z" fill="#ff8c00" transform="translate(20, 10)" />
+  <path d="M40 35 L55 60 L40 60 L45 85 L30 60 L45 60 Z" fill="white" transform="translate(20, 10)" />
+  
+  <!-- Wordmark -->
+  <text x="120" y="75" font-family="Arial, sans-serif" font-weight="bold" font-size="48">
+    <tspan fill="#ff8c00">BET</tspan>
+    <tspan fill="#9d4edd">UK</tspan>
+    <tspan fill="white">World</tspan>
+  </text>
+  
+  <!-- Sub-line -->
+  <text x="120" y="110" font-family="Arial, sans-serif" font-size="14" letter-spacing="4" fill="white" opacity="0.8" style="text-transform: uppercase;">
+    WORLDSBET.ORG
+  </text>
+</svg>

@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-background: #050b14;
+  --color-foreground: #ffffff;
+  --color-card-bg: #0a1628;
+  --color-primary: #00d4ff;
+  --color-accent: #d4af37;
+  --color-secondary: #008080;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-family: system-ui, -apple-system, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .teal-text {
+    @apply bg-gradient-to-r from-[#00d4ff] via-[#00f2ff] to-[#008080] bg-clip-text text-transparent font-bold;
+  }
+
+  .gold-text {
+    @apply bg-gradient-to-r from-[#d4af37] via-[#f9e29c] to-[#b8860b] bg-clip-text text-transparent font-bold;
+  }
+
+  .sports-card-bg {
+    @apply bg-[#0a1628] border border-teal-900/30 hover:border-teal-400/50 transition-all duration-500;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .stadium-glow {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
+  }
+
+  .felt-texture {
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .gold-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gold-shimmer::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(212, 175, 55, 0.1) 50%,
+      transparent 55%
+    );
+    animation: shimmer 4s infinite;
+  }
+
+  .teal-glow {
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%); }
+  100% { transform: translateX(100%) translateY(100%); }
 }
