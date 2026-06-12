@@ -15,6 +15,7 @@ interface PageProps {
 export default async function Home({ searchParams }: PageProps) {
   const params = await searchParams;
   const gclid = params.gclid;
+  const mainBrands = brands.filter(brand => !brand.isMobile);
 
   return (
     <main className="flex flex-col min-h-screen">
@@ -25,7 +26,7 @@ export default async function Home({ searchParams }: PageProps) {
       <section id="brands" className="py-12 bg-black/10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {brands.map((brand, index) => (
+            {mainBrands.map((brand, index) => (
               <BrandCard 
                 key={brand.id} 
                 brand={brand} 

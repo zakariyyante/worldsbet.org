@@ -57,7 +57,7 @@ export default function BrandCard({ brand, rank, gclid }: BrandCardProps) {
             src={brand.logo} 
             alt={brand.name} 
             fill 
-            className="object-contain p-3 grayscale group-hover:grayscale-0 transition-all duration-500"
+            className="object-contain p-3 transition-all duration-500"
           />
         </div>
         <div className="flex flex-col items-end">
